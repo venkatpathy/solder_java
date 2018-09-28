@@ -2,5 +2,5 @@
 
 echo RUNNING UNIT TESTS
 cd solder_java
-pwd
+ls -la
 ./gradlew test

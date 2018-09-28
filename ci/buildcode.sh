@@ -1,5 +1,12 @@
 #!/bin/sh
 
+echo RUNNING BUILD
+pwd
+ls -la
 cd solder_java
-./gradlew clean assemble
-cp build/libs/*.jar ../artifacts/
+ls -la
+
+gradlew clean assemble
+cp app/build/outputs/apk/* ../android/*
+cd ..
+ls -la

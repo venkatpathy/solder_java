@@ -1,6 +1,6 @@
 #!/bin/sh
 
 echo RUNNING UNIT TESTS
-cd solder
+cd solder_java
 pwd
 ./gradlew test

@@ -4,9 +4,9 @@ image_resource:
   type: docker-image
   source: {repository: jacekmarchwicki/gradle}
 inputs:
-- name: solder
+- name: solder_java
 outputs:
 - name: artifacts
 
 run:
-  path: solder/ci/buildcode.sh
+  path: solder_java/ci/buildcode.sh

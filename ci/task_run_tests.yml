@@ -4,7 +4,7 @@ image_resource:
   type: docker-image
   source: {repository: jacekmarchwicki/android}
 inputs:
-- name: solder
+- name: solder_java
 
 run:
-  path: solder/ci/run-unit-tests.sh
+  path: solder_java/ci/run-unit-tests.sh

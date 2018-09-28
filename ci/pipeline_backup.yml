@@ -1,9 +1,9 @@
 resources:
-- name: solder
+- name: solder_java
   type: git
   source:
     branch: master
-    uri: https://github.com/venkatpathy/solder.git
+    uri: https://github.com/venkatpathy/solder_java.git
 
 - name: deploy-cf
   type: cf
@@ -19,20 +19,20 @@ jobs:
 - name: Unit Tests
   public: false
   plan:
-    - get: solder
+    - get: solder_java
       trigger: true
     - task: Run Unit Tests
-      file: solder/ci/task_run_tests.yml
+      file: solder_java/ci/task_run_tests.yml
 
 - name: Build
   public: false
   plan:
-    - get: solder
+    - get: solder_java
       passed: [Unit Tests]
       trigger: true
     - task: Build Code
-      file: solder/ci/task_buildcode.yml
+      file: solder_java/ci/task_buildcode.yml
     - put: deploy-cf
       params:
-        manifest: solder/ci/cf_manifest.yml
+        manifest: solder_java/ci/cf_manifest.yml
         path: artifacts/*.jar

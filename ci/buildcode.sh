@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd solder
+cd solder_java
 ./gradlew clean assemble
 cp build/libs/*.jar ../artifacts/

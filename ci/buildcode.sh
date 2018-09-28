@@ -7,6 +7,6 @@ cd solder_java
 ls -la
 
 ./gradlew clean assemble
-cp app/build/outputs/* ../artifacts/*
+cp app/build/outputs/* ../artifacts/
 cd ..
 ls -la

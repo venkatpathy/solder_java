@@ -1,0 +1,24 @@
+resources:
+- name: solder
+  type: git
+  source:
+    branch: master
+    uri: https://github.com/venkatpathy/solder.git
+
+jobs:
+- name: Unit Tests
+  public: false
+  plan:
+    - get: solder
+      trigger: true
+    - task: Run Unit Tests
+      file: solder/ci/task_run_tests.yml
+
+- name: Build
+  public: false
+  plan:
+    - get: solder
+      passed: [Unit Tests]
+      trigger: true
+    - task: Build Code
+      file: solder/ci/task_buildcode.yml

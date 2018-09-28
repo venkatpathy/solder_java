@@ -2,7 +2,7 @@
 platform: linux
 image_resource:
   type: docker-image
-  source: {repository: jacekmarchwicki/gradle}
+  source: {repository: jacekmarchwicki/android}
 inputs:
 - name: solder_java
 
